@@ -12,6 +12,11 @@ public class SinglyLinkedList<E> implements ListADT<E> {
      * */
     private final Node<E> head = null;
 
+    /*
+     * This size variable will keep the count of the total number of nodes in the linked list except the head node.
+     * */
+    private final int size = 0;
+
     @Override
     public boolean add(E item) {
         return false;
