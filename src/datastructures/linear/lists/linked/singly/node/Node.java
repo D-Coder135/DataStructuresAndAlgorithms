@@ -9,4 +9,12 @@ public class Node<E> {
      * 4. "Data" Classes created by a programmer in a package.
      * */
     private E data;
+
+    /*
+     * This variable will store the reference to the next node of the current node.
+     * This will form a "logical-link" (not a physical link) from the current node to the next node.
+     * It is hence possible to query the current node for the next node, and thus we can traverse to the next node if
+     * required.
+     * */
+    private Node<E> next;
 }
