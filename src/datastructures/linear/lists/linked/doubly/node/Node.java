@@ -14,6 +14,8 @@ public class Node<E> {
      * */
     private final E data;
 
+    private final Node<E> previous;
+
     /*
      * This variable will store the reference to the next node of the current node.
      * This will form a "logical-link" (not a physical link) from the current node to the next node.
@@ -22,12 +24,14 @@ public class Node<E> {
      * */
     private final Node<E> next;
 
+
     /*
      * This constructor is used in the case that we want to create a node but only the data of the node is
      * available to us, in this case, the node simply DOES NOT have a next node, and thus the value is set to null.
      * */
     public Node(E data) {
         this.data = data;
+        this.previous = null;
         this.next = null;
     }
 
@@ -35,8 +39,9 @@ public class Node<E> {
      * This constructor is used in the case that we want to create a node and we have both the data of the node and
      * the
      * */
-    public Node(E data, Node<E> next) {
+    public Node(E data, Node<E> previous, Node<E> next) {
         this.data = data;
+        this.previous = previous;
         this.next = next;
     }
 
@@ -56,6 +61,10 @@ public class Node<E> {
      */
     public Node<E> getNext() {
         return next;
+    }
+
+    public Node<E> getPrevious() {
+        return previous;
     }
 }
 
