@@ -1,4 +1,4 @@
 package datastructures.linear.lists.linked.singly;
 
-public class SinglyLinkedList {
+public class SinglyLinkedList<E> {
 }
