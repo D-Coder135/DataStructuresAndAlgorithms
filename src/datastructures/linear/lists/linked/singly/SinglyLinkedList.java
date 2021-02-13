@@ -101,7 +101,19 @@ public class SinglyLinkedList<E> implements ListADT<E> {
             throw new IndexOutOfBoundsException();
         } else if (index == 0) {
             return removeFirst();
+        } else {
+            Node<E> previousNode = getNode(index - 1);
+            return removeAfter(previousNode);
         }
+    }
+
+    /**
+     * This method will remove a node after the given node in the linked list.
+     *
+     * @param previousNode The node after which the node is to be deleted.
+     * @return the node's data that was deleted or null if there was no node.
+     */
+    private E removeAfter(Node<E> previousNode) {
         return null;
     }
 
