@@ -20,7 +20,7 @@ public class Node<E> {
      * It is hence possible to query the current node for the previous node, and thus we can traverse to the previous
      * node if required.
      * */
-    private final Node<E> previous;
+    private Node<E> previous;
 
     /*
      * This variable will store the reference to the next node of the current node.
@@ -28,7 +28,7 @@ public class Node<E> {
      * It is hence possible to query the current node for the next node, and thus we can traverse to the next node if
      * required.
      * */
-    private final Node<E> next;
+    private Node<E> next;
 
 
     /*
