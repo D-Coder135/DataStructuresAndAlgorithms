@@ -22,7 +22,8 @@ public class DoublyLinkedList<E> implements ListADT<E> {
 
     @Override
     public boolean add(E item) {
-        return false;
+        add(size, item);
+        return true;
     }
 
     /**
@@ -49,11 +50,18 @@ public class DoublyLinkedList<E> implements ListADT<E> {
     }
 
     private void addFirst(E item) {
-        head = new Node<>(item, null, head);
+        tail = head = new Node<>(item, null, null);
+        size++;
     }
 
     private void addAfter(Node<E> previousNode, E item) {
-
+        Node<E> nextNode = previousNode.getNext();
+        Node<E> newNode = new Node<>(item, previousNode, nextNode);
+        previousNode.setNext(newNode);
+        if (nextNode != null) {
+            nextNode.setPrevious(newNode);
+        }
+        size++;
     }
 
     @Override

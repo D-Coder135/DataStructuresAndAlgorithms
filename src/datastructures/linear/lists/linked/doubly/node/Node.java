@@ -77,5 +77,13 @@ public class Node<E> {
     public Node<E> getPrevious() {
         return previous;
     }
+
+    public void setPrevious(Node<E> previous) {
+        this.previous = previous;
+    }
+
+    public void setNext(Node<E> next) {
+        this.next = next;
+    }
 }
 
