@@ -108,16 +108,6 @@ public class SinglyLinkedList<E> implements ListADT<E> {
     }
 
     /**
-     * This method will remove a node after the given node in the linked list.
-     *
-     * @param previousNode The node after which the node is to be deleted.
-     * @return the node's data that was deleted or null if there was no node.
-     */
-    private E removeAfter(Node<E> previousNode) {
-        return null;
-    }
-
-    /**
      * This method will remove the first node from the linked list.
      *
      * @return The removed node's data or null if the list was empty.
@@ -127,6 +117,23 @@ public class SinglyLinkedList<E> implements ListADT<E> {
         if (head != null) {
             removedValue = head.getData();
             head = head.getNext();
+            size--;
+        }
+        return removedValue;
+    }
+
+    /**
+     * This method will remove a node after the given node in the linked list.
+     *
+     * @param previousNode The node after which the node is to be deleted.
+     * @return the node's data that was deleted or null if there was no node.
+     */
+    private E removeAfter(Node<E> previousNode) {
+        E removedValue = null;
+        Node<E> nodeToBeDeleted = previousNode.getNext();
+        if (nodeToBeDeleted != null) {
+            removedValue = nodeToBeDeleted.getData();
+            previousNode.setNext(nodeToBeDeleted.getNext());
             size--;
         }
         return removedValue;
