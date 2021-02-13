@@ -40,16 +40,20 @@ public class Node<E> {
         this.next = next;
     }
 
-    /*
+    /**
      * This is the public getter method for reading the value of the data of a node.
-     * */
+     *
+     * @return returns the actual data stored in the node.
+     */
     public E getData() {
         return data;
     }
 
-    /*
+    /**
      * This is the public getter method for reading the reference value of the next node of the current node.
-     * */
+     *
+     * @return returns the reference of the next node.
+     */
     public Node<E> getNext() {
         return next;
     }
