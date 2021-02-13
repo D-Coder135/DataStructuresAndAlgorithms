@@ -8,21 +8,52 @@ public class DoublyLinkedList<E> implements ListADT<E> {
     /*
      * This field will store the reference to the first node in the linked list.
      * */
-    private Node<E> head = null;
+    private final Node<E> head = null;
 
     /*
      * This field will store the reference to the last node in the linked list.
      * */
-    private Node<E> tail = null;
+    private final Node<E> tail = null;
 
     /*
      * This field will store the current size of the linked list.
      * */
-    private int size = 0;
+    private final int size = 0;
 
     @Override
     public boolean add(E item) {
         return false;
+    }
+
+    /**
+     * This method will add an item node in the linked list at the given item.
+     *
+     * @param index The index of the linked list at which the node is to be added.
+     * @param item  The data value of the node to be created and added to the linked list.
+     * @throws IndexOutOfBoundsException If the index is negative or greater than the size.
+     */
+    public void add(int index, E item) {
+        if (index < 0 || index > size) {
+            // throw the IndexOutOfBoundsException if the index given is incorrect.
+            throw new IndexOutOfBoundsException(index);
+        } else if (index == 0) {
+            // the node is to be added at the first index, call the addFirst() method
+            addFirst(item);
+        } else {
+            // the node is to be added somewhere after a given node
+            // firstly, get the node after which we have to add a new node.
+            Node<E> previousNode = getNode(index - 1);
+            // call the addAfter() method to add the node after 'previousNode'.
+            addAfter(previousNode, item);
+        }
+    }
+
+    private void addFirst(E item) {
+
+    }
+
+    private void addAfter(Node<E> previousNode, E item) {
+
     }
 
     @Override
