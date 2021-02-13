@@ -99,8 +99,25 @@ public class SinglyLinkedList<E> implements ListADT<E> {
     public E remove(int index) throws IndexOutOfBoundsException {
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException();
+        } else if (index == 0) {
+            return removeFirst();
         }
         return null;
+    }
+
+    /**
+     * This method will remove the first node from the linked list.
+     *
+     * @return The removed node's data or null if the list was empty.
+     */
+    private E removeFirst() {
+        E removedValue = null;
+        if (head != null) {
+            removedValue = head.getData();
+            head = head.getNext();
+            size--;
+        }
+        return removedValue;
     }
 
     /**
