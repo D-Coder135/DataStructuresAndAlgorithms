@@ -10,16 +10,36 @@ public class SinglyLinkedList<E> implements ListADT<E> {
      * 1. Store the reference value for the first node object in the linked list.
      * 2. Keep track of the first node in the linked list in case it is changed anytime.
      * */
-    private final Node<E> head = null;
+    private Node<E> head = null;
 
     /*
      * This size variable will keep the count of the total number of nodes in the linked list except the head node.
      * */
-    private final int size = 0;
+    private int size = 0;
 
     @Override
     public boolean add(E item) {
         return false;
+    }
+
+    /**
+     * This method will add an item node to the beginning of the linked list.
+     * Since the programmer is only giving us the item(the data value) and NOT
+     * the node itself, we would have to create a node. Since, the linked list can only
+     * operate on nodes.
+     *
+     * @param item This is the data value of the node to be created and added to the linked list.
+     */
+    private void addFirst(E item) {
+        /*
+         * The code following these comments is the summation of the two lines of code
+         * written inside the comments.
+         * Node<E> n1 = new Node<E>(item, null);
+         * head = n1;
+         * */
+        head = new Node<>(item, head);
+        // increase the size of the linked list
+        size++;
     }
 
     @Override
@@ -40,7 +60,6 @@ public class SinglyLinkedList<E> implements ListADT<E> {
      */
     private Node<E> getNode(int index) {
         Node<E> currentNode = head;
-
         /*
          * using a loop to traverse the whole linked list,
          * the loop will run until i is less than the size of the linked list,
