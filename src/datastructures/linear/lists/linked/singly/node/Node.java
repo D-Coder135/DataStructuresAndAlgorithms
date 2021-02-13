@@ -20,7 +20,7 @@ public class Node<E> {
      * It is hence possible to query the current node for the next node, and thus we can traverse to the next node if
      * required.
      * */
-    private final Node<E> next;
+    private Node<E> next;
 
     /*
      * This constructor is used in the case that we want to create a node but only the data of the node is
@@ -56,5 +56,9 @@ public class Node<E> {
      */
     public Node<E> getNext() {
         return next;
+    }
+
+    public void setNext(Node<E> next) {
+        this.next = next;
     }
 }
