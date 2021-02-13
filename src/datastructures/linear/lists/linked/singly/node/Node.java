@@ -26,4 +26,27 @@ public class Node<E> {
         this.data = data;
         this.next = null;
     }
+
+    /*
+     * This constructor is used in the case that we want to create a node and we have both the data of the node and
+     * the
+     * */
+    public Node(E data, Node<E> next) {
+        this.data = data;
+        this.next = next;
+    }
+
+    /*
+     * This is the public getter method for reading the value of the data of a node.
+     * */
+    public E getData() {
+        return data;
+    }
+
+    /*
+     * This is the public getter method for reading the reference value of the next node of the current node.
+     * */
+    public Node<E> getNext() {
+        return next;
+    }
 }
