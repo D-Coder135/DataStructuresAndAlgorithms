@@ -14,6 +14,12 @@ public class Node<E> {
      * */
     private final E data;
 
+    /*
+     * This variable will store the reference to the previous node of the current node.
+     * This will for a "logical-link" (not a physical link) from the current node to the previous node.
+     * It is hence possible to query the current node for the previous node, and thus we can traverse to the previous
+     * node if required.
+     * */
     private final Node<E> previous;
 
     /*
