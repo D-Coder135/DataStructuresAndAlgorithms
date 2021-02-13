@@ -8,17 +8,17 @@ public class DoublyLinkedList<E> implements ListADT<E> {
     /*
      * This field will store the reference to the first node in the linked list.
      * */
-    private final Node<E> head = null;
+    private Node<E> head = null;
 
     /*
      * This field will store the reference to the last node in the linked list.
      * */
-    private final Node<E> tail = null;
+    private Node<E> tail = null;
 
     /*
      * This field will store the current size of the linked list.
      * */
-    private final int size = 0;
+    private int size = 0;
 
     @Override
     public boolean add(E item) {
@@ -49,7 +49,7 @@ public class DoublyLinkedList<E> implements ListADT<E> {
     }
 
     private void addFirst(E item) {
-
+        head = new Node<>(item, null, head);
     }
 
     private void addAfter(Node<E> previousNode, E item) {
