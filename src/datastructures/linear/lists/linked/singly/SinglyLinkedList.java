@@ -5,7 +5,12 @@ import datastructures.linear.lists.linked.singly.node.Node;
 
 public class SinglyLinkedList<E> implements ListADT<E> {
 
-    private Node<E> head = null;
+    /*
+     * This head reference variable will
+     * 1. Store the reference value for the first node object in the linked list.
+     * 2. Keep track of the first node in the linked list in case it is changed anytime.
+     * */
+    private final Node<E> head = null;
 
     @Override
     public boolean add(E item) {
