@@ -1,5 +1,9 @@
 package datastructures.linear.lists.linked.singly.node;
 
+/**
+ * The Node class is created generic so that it can support operations with any
+ * reference type (pre-defined or programmer-defined) in Java.
+ */
 public class Node<E> {
     /*
      * The E type here specifies that the data variable can be of any reference type, including but not limited to -
