@@ -90,11 +90,16 @@ public class SinglyLinkedList<E> implements ListADT<E> {
 
     @Override
     public E remove() {
-        return null;
+        // if the index for removal of a node is not specified, just remove the first node in the linked list
+        // the operation will always be O(1).
+        return remove(0);
     }
 
     @Override
     public E remove(int index) throws IndexOutOfBoundsException {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException();
+        }
         return null;
     }
 
