@@ -1,4 +1,4 @@
 package datastructures.linear.lists.array;
 
-public class ArraysList {
+public class ArraysList<E> {
 }
