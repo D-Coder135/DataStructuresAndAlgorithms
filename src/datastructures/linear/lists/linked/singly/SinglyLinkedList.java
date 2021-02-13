@@ -23,6 +23,29 @@ public class SinglyLinkedList<E> implements ListADT<E> {
     }
 
     /**
+     * This method will add an item node in the linked list at the given item.
+     *
+     * @param index The index of the linked list at which the node is to be added.
+     * @param item  The data value of the node to be created and added to the linked list.
+     * @throws IndexOutOfBoundsException If the index is negative or greater than the size.
+     */
+    public void add(int index, E item) {
+        if (index < 0 || index > size) {
+            // throw the IndexOutOfBoundsException if the index given is incorrect.
+            throw new IndexOutOfBoundsException(index);
+        } else if (index == 0) {
+            // the node is to be added at the first index, call the addFirst() method
+            addFirst(item);
+        } else {
+            // the node is to be added somewhere after a given node
+            // firstly, get the node after which we have to add a new node.
+            Node<E> previousNode = getNode(index - 1);
+            // call the addAfter() method to add the node after 'temp'.
+            addAfter(previousNode, item);
+        }
+    }
+
+    /**
      * This method will add an item node to the beginning of the linked list.
      * Since the programmer is only giving us the item(the data value) and NOT
      * the node itself, we would have to create a node. Since, the linked list can only
