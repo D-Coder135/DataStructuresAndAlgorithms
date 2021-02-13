@@ -19,7 +19,8 @@ public class SinglyLinkedList<E> implements ListADT<E> {
 
     @Override
     public boolean add(E item) {
-        return false;
+        add(size, item);
+        return true;
     }
 
     /**
