@@ -20,7 +20,7 @@ public class Node<E> {
      * It is hence possible to query the current node for the next node, and thus we can traverse to the next node if
      * required.
      * */
-    private final datastructures.linear.lists.linked.singly.node.Node<E> next;
+    private final Node<E> next;
 
     /*
      * This constructor is used in the case that we want to create a node but only the data of the node is
@@ -35,7 +35,7 @@ public class Node<E> {
      * This constructor is used in the case that we want to create a node and we have both the data of the node and
      * the
      * */
-    public Node(E data, datastructures.linear.lists.linked.singly.node.Node<E> next) {
+    public Node(E data, Node<E> next) {
         this.data = data;
         this.next = next;
     }
@@ -54,7 +54,7 @@ public class Node<E> {
      *
      * @return returns the reference of the next node.
      */
-    public datastructures.linear.lists.linked.singly.node.Node<E> getNext() {
+    public Node<E> getNext() {
         return next;
     }
 }
