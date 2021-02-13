@@ -69,6 +69,11 @@ public class Node<E> {
         return next;
     }
 
+    /**
+     * This is the public getter method for reading the reference value of the previous node of the current node.
+     *
+     * @return returns the reference of the previous node.
+     */
     public Node<E> getPrevious() {
         return previous;
     }
